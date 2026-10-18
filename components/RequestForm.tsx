@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "motion/react";
 import { CheckCircle2, Loader2, Minus, Plus, Trash2 } from "lucide-react";
 import { requestSchema } from "@/lib/request-schema";
-import { getCategory, unitInfo, type Img } from "@/lib/structure";
+import { company, getCategory, unitInfo, type Img } from "@/lib/structure";
 import { getT, tr, type Key, type Locale, type T } from "@/lib/i18n";
 import { useRequestList } from "./RequestList";
 
@@ -25,6 +25,8 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
   const { items, update, remove, clear } = useRequestList();
   const [sentId, setSentId] = useState<string | null>(null);
   const [serverError, setServerError] = useState(false);
+  // On the GitHub Pages copy there is no server: the request is sent by WhatsApp or email instead.
+  const [staticMsg, setStaticMsg] = useState<string | null>(null);
   const known = items.filter((i) => catalog[i.slug]);
 
   const {
@@ -49,6 +51,28 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
         unit: c.unit,
       };
     });
+    if (process.env.NEXT_PUBLIC_STATIC === "1") {
+      const v = values;
+      setStaticMsg(
+        [
+          "Hieron — quote request",
+          `Name: ${v.name}`,
+          `Company: ${v.company}`,
+          `Email: ${v.email}`,
+          v.phone && `Phone: ${v.phone}`,
+          v.country && `Country: ${v.country}`,
+          v.rooms && `Rooms / volume: ${v.rooms}`,
+          `Custom branding: ${v.branding ? "Yes" : "No"}`,
+          " ",
+          ...(lines.length ? lines.map((i) => `• ${i.name} — ${i.size}, ${i.option} × ${i.quantity} ${i.unit}`) : ["(general request)"]),
+          v.message && `\nMessage: ${v.message}`,
+        ]
+          .filter((x): x is string => typeof x === "string" && x !== "")
+          .join("\n"),
+      );
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     const res = await fetch("/api/request", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -60,6 +84,21 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
     clear();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  if (staticMsg) {
+    const text = encodeURIComponent(staticMsg);
+    return (
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mx-auto max-w-xl py-16 text-center">
+        <CheckCircle2 className="mx-auto h-14 w-14 text-gold" strokeWidth={1} />
+        <h2 className="mt-8 font-display text-4xl font-light">{t("staticReady")}</h2>
+        <pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap bg-white p-5 text-start text-xs leading-relaxed text-steel" dir="ltr">{staticMsg}</pre>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <a href={`https://wa.me/${company.whatsapp}?text=${text}`} target="_blank" rel="noopener noreferrer" onClick={clear} className="btn-dark">{t("whatsapp")}</a>
+          <a href={`mailto:${company.email}?subject=${encodeURIComponent("Quote request")}&body=${text}`} onClick={clear} className="btn-outline-dark">{company.email}</a>
+        </div>
+      </motion.div>
+    );
+  }
 
   if (sentId) {
     return (

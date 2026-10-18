@@ -229,6 +229,7 @@ const dict = {
   rights: { en: "All rights reserved.", fr: "Tous droits réservés.", tr: "Tüm hakları saklıdır.", ar: "جميع الحقوق محفوظة.", ru: "Все права защищены." },
   notFound: { en: "This page could not be found", fr: "Page introuvable", tr: "Sayfa bulunamadı", ar: "تعذّر العثور على هذه الصفحة", ru: "Страница не найдена" },
   backToCollection: { en: "Back to the collection", fr: "Retour à la collection", tr: "Koleksiyona dön", ar: "العودة إلى المجموعة", ru: "Вернуться к коллекции" },
+  staticReady: { en: "Your request is ready — send it to us", fr: "Votre demande est prête — envoyez-la-nous", tr: "Talebiniz hazır — bize gönderin", ar: "طلبك جاهز — أرسله إلينا", ru: "Ваш запрос готов — отправьте его нам" },
   whatsapp: { en: "Chat on WhatsApp", fr: "Discuter sur WhatsApp", tr: "WhatsApp'tan yazın", ar: "تحدّث عبر واتساب", ru: "Написать в WhatsApp" },
 } satisfies Record<string, T>;
 

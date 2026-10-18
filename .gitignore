@@ -9,3 +9,6 @@ data/requests.json
 data/
 *.pdf
 .claude/
+out/
+.next-pages/
+.pages-stash/
