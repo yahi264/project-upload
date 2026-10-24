@@ -20,11 +20,10 @@ export function ExportShowcase({ locale }: { locale: Locale }) {
         <Reveal className="lg:col-span-6">
           <p className="eyebrow text-gold">{tr(x.eyebrow, l)}</p>
           <h2 className="mt-6 font-display text-4xl font-light leading-tight sm:text-5xl">{tr(x.title, l)}</h2>
-          <div className="mt-8 space-y-5 leading-relaxed text-steel">
-            {x.paragraphs.map((p) => (
-              <p key={p.en}>{tr(p, l)}</p>
-            ))}
-          </div>
+          <p className="mt-8 text-lg font-light leading-relaxed text-navy">{tr(x.lead, l)}</p>
+          {x.body.map((p, i) => (
+            <p key={i} className="mt-6 leading-relaxed text-steel">{tr(p, l)}</p>
+          ))}
         </Reveal>
         <Reveal delay={0.12} className="grid grid-cols-2 gap-3 lg:col-span-6">
           <div className="relative col-span-2 aspect-[16/10] overflow-hidden">
@@ -34,7 +33,7 @@ export function ExportShowcase({ locale }: { locale: Locale }) {
             <Image src="/images/p/cotton-yarn-1.webp" alt="" fill sizes="(min-width:1024px) 22vw, 50vw" className="object-cover" />
           </div>
           <div className="relative aspect-[16/10] overflow-hidden">
-            <Image src="/images/p/twill-weave-fabric-1.webp" alt="" fill sizes="(min-width:1024px) 22vw, 50vw" className="object-cover" />
+            <Image src="/images/p/twill-weave-fabric-3.webp" alt="" fill sizes="(min-width:1024px) 22vw, 50vw" className="object-cover" />
           </div>
         </Reveal>
       </section>

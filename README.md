@@ -4,6 +4,10 @@ Product showcase and quote-request website, in **English, French, Turkish, Arabi
 
 ## Run it
 
+On Windows, just double-click **`start-website.bat`**: it installs everything the first time, starts the site and opens it in the browser (keep its window open).
+
+Or from a terminal:
+
 ```bash
 npm install      # only needed once
 npm run dev      # then open http://localhost:3000
@@ -13,15 +17,19 @@ For the live version: `npm run build` then `npm start`.
 
 Visitors are sent to their browser's language automatically (`/en`, `/fr`, `/tr`, `/ar`, `/ru`), and can switch with the globe menu in the header.
 
+### Offline copy (no installation needed)
+
+`PAGES_BASE= node scripts/deploy-pages.mjs --build-only` builds the site into `.next-pages/`. Put that folder, renamed `site`, next to the two files in `scripts/offline/`: double-clicking `Open-Website.bat` then serves it on the computer with Windows' built-in PowerShell and opens the browser — nothing to install.
+
 ## Catalogue
 
-229 products in four collections:
+252 products in four collections:
 
 | Collection | Categories |
 | --- | --- |
 | Hotel | Towels · Bathrobes · Bath Mats · Bed Linen · Beach & Pool · Amenities & Room Sets |
-| Home | Botanical · Hieroglyphs · Marine · Luxury · Bed & Mattress · Baby & Kids |
-| Promotion | Wristbands/Lanyards/Keychains · Caps & Beanies · Sweatshirts & T-Shirts · Sportswear · Socks · Kitchen & Bar · Bags · Towels & Blankets · Pillows & Pet Beds · Business Gifts · Flags & Fan Items · Uniforms |
+| Home | Botanical · Hieroglyphs · Marine · Luxury · Cushions & Throws · Bed & Mattress · Baby & Kids |
+| Promotion | Christmas Products · Wristbands/Lanyards/Keychains · Caps & Beanies · Bandanas & Neck Gaiters · Sweatshirts & T-Shirts · Sportswear · Socks · Kitchen & Bar · Bags · Towels & Blankets · Pillows & Pet Beds · Business Gifts · Flags & Fan Items · Uniforms |
 | Fabric & Yarn Export | Woven Fabrics (plain, twill, panama, half-panama, ripstop, microfiber) · Yarns & Filaments (cotton, polyester, blends, filament) |
 
 Fabrics are requested in metres and yarns in kilograms; everything else in pieces. The export page text is in `lib/export-content.ts`.

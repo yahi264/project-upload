@@ -7,7 +7,7 @@ import { getT, type Locale } from "@/lib/i18n";
 const points = [
   { title: "mtoLogo", text: "mtoLogoT", icon: Stamp, img: "/images/p/branded-pillow-set-1.webp" },
   { title: "mtoColour", text: "mtoColourT", icon: Palette, img: "/images/p/polyester-yarn-1.webp" },
-  { title: "mtoSpec", text: "mtoSpecT", icon: Ruler, img: "/images/p/twill-weave-fabric-1.webp" },
+  { title: "mtoSpec", text: "mtoSpecT", icon: Ruler, img: "/images/p/twill-weave-fabric-3.webp" },
   { title: "mtoPack", text: "mtoPackT", icon: Package, img: "/images/p/business-gift-set-1.webp" },
 ] as const;
 

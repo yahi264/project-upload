@@ -7,9 +7,9 @@ import { PageHero } from "@/components/PageHero";
 import { CatalogBrowser } from "@/components/CatalogBrowser";
 import { Reveal } from "@/components/Reveal";
 import { ExportShowcase } from "@/components/ExportShowcase";
-import { MadeToOrderBand } from "@/components/MadeToOrder";
 import { ChristmasFeature } from "@/components/ChristmasFeature";
-import { categoriesIn, divisions, getDivision, productsIn, productsInDivision } from "@/lib/catalog";
+import { MadeToOrderBand } from "@/components/MadeToOrder";
+import { categoriesIn, divisions, featuredCategory, getDivision, productsIn, productsInDivision } from "@/lib/catalog";
 import { getT, isLocale, locales, tr, type Locale } from "@/lib/i18n";
 
 type Props = { params: Promise<{ locale: string; division: string }> };
@@ -54,7 +54,7 @@ export default async function DivisionPage({ params }: Props) {
         <div className={`grid gap-4 ${cats.length <= 2 ? "md:grid-cols-2" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}>
           {cats.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 4) * 0.06}>
-              <Link href={`/${l}/collections/${d.slug}/${c.slug}`} className={`group relative block overflow-hidden ${cats.length <= 2 ? "aspect-[16/9]" : "aspect-[4/5]"} ${c.seasonal ? "ring-2 ring-gold ring-offset-4 ring-offset-cream" : ""}`}>
+              <Link href={`/${l}/collections/${d.slug}/${c.slug}`} className={`group relative block overflow-hidden ${cats.length <= 2 ? "aspect-[16/9]" : "aspect-[4/5]"} ${c.slug === featuredCategory ? "ring-2 ring-gold ring-offset-4 ring-offset-cream" : ""}`}>
                 <Image
                   src={c.cover}
                   alt={tr(c.name, l)}
@@ -63,7 +63,7 @@ export default async function DivisionPage({ params }: Props) {
                   className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-                {c.seasonal && (
+                {c.slug === featuredCategory && (
                   <span className="eyebrow absolute start-4 top-4 inline-flex items-center gap-1.5 bg-gold px-2.5 py-1 text-ink">
                     <Snowflake className="h-3 w-3" strokeWidth={1.6} /> {t("xmasBadge")}
                   </span>

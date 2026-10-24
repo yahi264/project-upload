@@ -5534,6 +5534,12 @@
   },
   "images": [
    {
+    "src": "/images/p/twill-weave-fabric-3.webp",
+    "color": "#55382b",
+    "w": 1600,
+    "h": 899
+   },
+   {
     "src": "/images/p/twill-weave-fabric-1.webp",
     "color": "#556379",
     "w": 1600,
@@ -5613,13 +5619,7 @@
   "images": [
    {
     "src": "/images/p/ripstop-fabric-1.webp",
-    "color": "#726c53",
-    "w": 1600,
-    "h": 900
-   },
-   {
-    "src": "/images/p/ripstop-fabric-2.webp",
-    "color": "#534e43",
+    "color": "#5b553f",
     "w": 1600,
     "h": 899
    }
@@ -5639,15 +5639,9 @@
   "images": [
    {
     "src": "/images/p/microfiber-fabric-1.webp",
-    "color": "#4a4d55",
+    "color": "#5887c2",
     "w": 1600,
-    "h": 900
-   },
-   {
-    "src": "/images/p/microfiber-fabric-2.webp",
-    "color": "#594d45",
-    "w": 1600,
-    "h": 900
+    "h": 899
    }
   ]
  },
@@ -5752,6 +5746,544 @@
     "color": "#7a7872",
     "w": 1600,
     "h": 900
+   }
+  ]
+ },
+ {
+  "slug": "embossed-bath-mat",
+  "division": "hotel",
+  "category": "bath-mats",
+  "name": {
+   "en": "Embossed Bath Mat",
+   "fr": "Tapis de bain en relief",
+   "tr": "Kabartmalı Banyo Paspası",
+   "ar": "دوّاسة حمّام بنقش بارز",
+   "ru": "Рельефный коврик для ванной"
+  },
+  "images": [
+   {
+    "src": "/images/p/embossed-bath-mat-1.webp",
+    "color": "#4a777a",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/embossed-bath-mat-2.webp",
+    "color": "#50555f",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/embossed-bath-mat-3.webp",
+    "color": "#8f7b82",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "plush-bath-mat",
+  "division": "hotel",
+  "category": "bath-mats",
+  "name": {
+   "en": "Plush Bath Mat",
+   "fr": "Tapis de bain moelleux",
+   "tr": "Peluş Banyo Paspası",
+   "ar": "دوّاسة حمّام وبرية",
+   "ru": "Плюшевый коврик для ванной"
+  },
+  "images": [
+   {
+    "src": "/images/p/plush-bath-mat-1.webp",
+    "color": "#7c7a75",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/plush-bath-mat-2.webp",
+    "color": "#6b747f",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "hieroglyph-bedspread",
+  "division": "home",
+  "category": "hieroglyphs",
+  "name": {
+   "en": "Hieroglyph Bedspread",
+   "fr": "Couvre-lit Hiéroglyphes",
+   "tr": "Hiyeroglif Yatak Örtüsü",
+   "ar": "مفرش سرير بنقوش هيروغليفية",
+   "ru": "Покрывало «Иероглифы»"
+  },
+  "images": [
+   {
+    "src": "/images/p/hieroglyph-bedspread-1.webp",
+    "color": "#795f44",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "pyramid-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Pyramid Cushions",
+   "fr": "Coussins Pyramide",
+   "tr": "Piramit Kırlent",
+   "ar": "وسائد الهرم",
+   "ru": "Подушки «Пирамида»"
+  },
+  "images": [
+   {
+    "src": "/images/p/pyramid-cushions-1.webp",
+    "color": "#9c7c53",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "hieroglyph-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Hieroglyph Cushions",
+   "fr": "Coussins Hiéroglyphes",
+   "tr": "Hiyeroglif Kırlent",
+   "ar": "وسائد هيروغليفية",
+   "ru": "Подушки «Иероглифы»"
+  },
+  "images": [
+   {
+    "src": "/images/p/hieroglyph-cushions-1.webp",
+    "color": "#575047",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "pharaoh-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Pharaoh Cushions",
+   "fr": "Coussins Pharaon",
+   "tr": "Firavun Kırlent",
+   "ar": "وسائد الفرعون",
+   "ru": "Подушки «Фараон»"
+  },
+  "images": [
+   {
+    "src": "/images/p/pharaoh-cushions-1.webp",
+    "color": "#7c6247",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "lattice-floral-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Lattice & Floral Cushions",
+   "fr": "Coussins Treillis & Fleurs",
+   "tr": "Kafes & Çiçek Desenli Kırlent",
+   "ar": "وسائد بنقش شبكي وزهري",
+   "ru": "Подушки «Решётка и цветы»"
+  },
+  "images": [
+   {
+    "src": "/images/p/lattice-floral-cushions-1.webp",
+    "color": "#5b5854",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "ikat-floral-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Ikat & Floral Cushions",
+   "fr": "Coussins Ikat & Fleurs",
+   "tr": "İkat & Çiçek Desenli Kırlent",
+   "ar": "وسائد بنقش إيكات وزهري",
+   "ru": "Подушки «Икат и цветы»"
+  },
+  "images": [
+   {
+    "src": "/images/p/ikat-floral-cushions-1.webp",
+    "color": "#61605d",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "damask-botanical-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Damask & Botanical Cushions",
+   "fr": "Coussins Damassé & Botanique",
+   "tr": "Damask & Botanik Kırlent",
+   "ar": "وسائد دمشقية ونباتية",
+   "ru": "Подушки «Дамаск и ботаника»"
+  },
+  "images": [
+   {
+    "src": "/images/p/damask-botanical-cushions-1.webp",
+    "color": "#606062",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "damask-leaf-cushions",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Damask & Leaf Cushions",
+   "fr": "Coussins Damassé & Feuillage",
+   "tr": "Damask & Yaprak Desenli Kırlent",
+   "ar": "وسائد دمشقية بنقش الأوراق",
+   "ru": "Подушки «Дамаск и листья»"
+  },
+  "images": [
+   {
+    "src": "/images/p/damask-leaf-cushions-1.webp",
+    "color": "#484a49",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "knitted-fringe-throw",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Knitted Fringe Throw",
+   "fr": "Plaid tricoté à franges",
+   "tr": "Püsküllü Örgü Şal Battaniye",
+   "ar": "بطانية محبوكة بأهداب",
+   "ru": "Вязаный плед с бахромой"
+  },
+  "images": [
+   {
+    "src": "/images/p/knitted-fringe-throw-1.webp",
+    "color": "#846d5c",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "chunky-knit-throw",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Chunky Knit Throw",
+   "fr": "Plaid grosse maille",
+   "tr": "Kalın Örgü Battaniye",
+   "ar": "بطانية بحياكة سميكة",
+   "ru": "Плед крупной вязки"
+  },
+  "images": [
+   {
+    "src": "/images/p/chunky-knit-throw-1.webp",
+    "color": "#7b695d",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "sherpa-fringe-throw",
+  "division": "home",
+  "category": "cushions-throws",
+  "name": {
+   "en": "Sherpa Fringe Throw",
+   "fr": "Plaid sherpa à franges",
+   "tr": "Püsküllü Welsoft Battaniye",
+   "ar": "بطانية شيربا بأهداب",
+   "ru": "Плед шерпа с бахромой"
+  },
+  "images": [
+   {
+    "src": "/images/p/sherpa-fringe-throw-1.webp",
+    "color": "#7d6f65",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "classic-hockey-jersey",
+  "division": "promo",
+  "category": "sportswear",
+  "name": {
+   "en": "Classic Hockey Jersey",
+   "fr": "Maillot de hockey classique",
+   "tr": "Klasik Hokey Forması",
+   "ar": "قميص هوكي كلاسيكي",
+   "ru": "Классический хоккейный свитер"
+  },
+  "images": [
+   {
+    "src": "/images/p/classic-hockey-jersey-1.webp",
+    "color": "#402c2e",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/classic-hockey-jersey-2.webp",
+    "color": "#49393c",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/classic-hockey-jersey-3.webp",
+    "color": "#302728",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "mesh-team-jersey",
+  "division": "promo",
+  "category": "sportswear",
+  "name": {
+   "en": "Mesh Team Jersey",
+   "fr": "Maillot d'équipe en mesh",
+   "tr": "File Takım Forması",
+   "ar": "قميص فريق شبكي",
+   "ru": "Командная сетчатая футболка"
+  },
+  "images": [
+   {
+    "src": "/images/p/mesh-team-jersey-1.webp",
+    "color": "#2b2f37",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/mesh-team-jersey-2.webp",
+    "color": "#272a2e",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "performance-training-tee",
+  "division": "promo",
+  "category": "sportswear",
+  "name": {
+   "en": "Performance Training T-Shirt",
+   "fr": "T-shirt d'entraînement technique",
+   "tr": "Performans Antrenman Tişörtü",
+   "ar": "تيشيرت تدريب عالي الأداء",
+   "ru": "Тренировочная футболка"
+  },
+  "images": [
+   {
+    "src": "/images/p/performance-training-tee-1.webp",
+    "color": "#292e2d",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/performance-training-tee-2.webp",
+    "color": "#202326",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/performance-training-tee-3.webp",
+    "color": "#212628",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/performance-training-tee-4.webp",
+    "color": "#29341a",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "running-shorts",
+  "division": "promo",
+  "category": "sportswear",
+  "name": {
+   "en": "Running Shorts",
+   "fr": "Short de running",
+   "tr": "Koşu Şortu",
+   "ar": "شورت جري",
+   "ru": "Шорты для бега"
+  },
+  "images": [
+   {
+    "src": "/images/p/running-shorts-1.webp",
+    "color": "#292c2c",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "compression-training-shorts",
+  "division": "promo",
+  "category": "sportswear",
+  "name": {
+   "en": "Compression Training Shorts",
+   "fr": "Short de compression",
+   "tr": "Kompresyonlu Antrenman Şortu",
+   "ar": "شورت تدريب ضاغط",
+   "ru": "Компрессионные шорты"
+  },
+  "images": [
+   {
+    "src": "/images/p/compression-training-shorts-1.webp",
+    "color": "#212426",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "embroidered-patch-cap",
+  "division": "promo",
+  "category": "headwear",
+  "name": {
+   "en": "Embroidered Patch Cap",
+   "fr": "Casquette à écusson brodé",
+   "tr": "Nakışlı Arma Şapka",
+   "ar": "قبعة بشارة مطرّزة",
+   "ru": "Кепка с вышитой нашивкой"
+  },
+  "images": [
+   {
+    "src": "/images/p/embroidered-patch-cap-1.webp",
+    "color": "#606161",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/embroidered-patch-cap-2.webp",
+    "color": "#6d6f6e",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "paisley-bandana",
+  "division": "promo",
+  "category": "bandanas",
+  "name": {
+   "en": "Paisley Bandana",
+   "fr": "Bandana cachemire",
+   "tr": "Şal Desenli Bandana",
+   "ar": "باندانا بنقش البيزلي",
+   "ru": "Бандана с узором пейсли"
+  },
+  "images": [
+   {
+    "src": "/images/p/paisley-bandana-1.webp",
+    "color": "#817373",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "bandana-neck-gaiter",
+  "division": "promo",
+  "category": "bandanas",
+  "name": {
+   "en": "Bandana Neck Gaiter",
+   "fr": "Tour de cou bandana",
+   "tr": "Bandana Boyunluk",
+   "ar": "غطاء رقبة باندانا",
+   "ru": "Бандана-гейтер"
+  },
+  "images": [
+   {
+    "src": "/images/p/bandana-neck-gaiter-1.webp",
+    "color": "#655455",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/bandana-neck-gaiter-2.webp",
+    "color": "#7c7172",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "knitted-fan-scarf",
+  "division": "promo",
+  "category": "fan-flags",
+  "name": {
+   "en": "Knitted Fan Scarf",
+   "fr": "Écharpe de supporter tricotée",
+   "tr": "Örme Taraftar Atkısı",
+   "ar": "وشاح مشجّعين محبوك",
+   "ru": "Вязаный шарф болельщика"
+  },
+  "images": [
+   {
+    "src": "/images/p/knitted-fan-scarf-1.webp",
+    "color": "#a29489",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/knitted-fan-scarf-2.webp",
+    "color": "#888683",
+    "w": 1600,
+    "h": 896
+   }
+  ]
+ },
+ {
+  "slug": "satin-fan-scarf",
+  "division": "promo",
+  "category": "fan-flags",
+  "name": {
+   "en": "Satin Fan Scarf",
+   "fr": "Écharpe de supporter en satin",
+   "tr": "Saten Taraftar Atkısı",
+   "ar": "وشاح مشجّعين ساتان",
+   "ru": "Атласный шарф болельщика"
+  },
+  "images": [
+   {
+    "src": "/images/p/satin-fan-scarf-1.webp",
+    "color": "#534f46",
+    "w": 1600,
+    "h": 896
+   },
+   {
+    "src": "/images/p/satin-fan-scarf-2.webp",
+    "color": "#726d60",
+    "w": 1600,
+    "h": 896
    }
   ]
  }

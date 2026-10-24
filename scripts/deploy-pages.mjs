@@ -7,7 +7,8 @@ import { copyFileSync, existsSync, mkdirSync, readdirSync, renameSync, rmSync, s
 import { join } from "node:path";
 
 const REPO = "https://github.com/yahi264/project-upload.git";
-const BASE = "/project-upload";
+// PAGES_BASE="" builds a copy that runs from the site root (the offline copy used by Open-Website.bat).
+const BASE = process.env.PAGES_BASE ?? "/project-upload";
 const serverOnly = ["proxy.ts", "app/api", "app/admin", "app/[locale]/[...rest]"];
 const stash = ".pages-stash";
 // With a custom distDir, Next.js writes the exported site there.

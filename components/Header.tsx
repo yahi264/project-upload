@@ -5,10 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ClipboardList, Menu, X } from "lucide-react";
+import { ClipboardList, Menu, Snowflake, X } from "lucide-react";
 import { useRequestList } from "./RequestList";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { categoriesIn, divisions } from "@/lib/structure";
+import { categoriesIn, divisions, featuredCategory } from "@/lib/structure";
 import { getT, tr, type Locale } from "@/lib/i18n";
 
 export function Header({ locale }: { locale: Locale }) {
@@ -81,8 +81,9 @@ export function Header({ locale }: { locale: Locale }) {
                               <li key={c.slug}>
                                 <Link
                                   href={`${base}/collections/${d.slug}/${c.slug}`}
-                                  className="text-sm text-steel transition-colors hover:text-navy"
+                                  className={`text-sm transition-colors ${c.slug === featuredCategory ? "inline-flex items-center gap-1.5 font-medium text-gold hover:text-navy" : "text-steel hover:text-navy"}`}
                                 >
+                                  {c.slug === featuredCategory && <Snowflake className="h-3.5 w-3.5" strokeWidth={1.6} />}
                                   {tr(c.name, locale)}
                                 </Link>
                               </li>
@@ -145,7 +146,8 @@ export function Header({ locale }: { locale: Locale }) {
                   </Link>
                   <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
                     {categoriesIn(d.slug).map((c) => (
-                      <Link key={c.slug} href={`${base}/collections/${d.slug}/${c.slug}`} className="text-sm text-silver">
+                      <Link key={c.slug} href={`${base}/collections/${d.slug}/${c.slug}`} className={`text-sm ${c.slug === featuredCategory ? "inline-flex items-center gap-1.5 text-gold-light" : "text-silver"}`}>
+                        {c.slug === featuredCategory && <Snowflake className="h-3.5 w-3.5" strokeWidth={1.6} />}
                         {tr(c.name, locale)}
                       </Link>
                     ))}

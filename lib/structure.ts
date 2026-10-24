@@ -28,8 +28,6 @@ export type Category = {
   options: T[];
   cover: string;
   unit: Unit;
-  // Highlighted as the current season on the Promotion page
-  seasonal?: boolean;
 };
 
 const t = (en: string, fr: string, tr: string, ar: string, ru: string): T => ({ en, fr, tr, ar, ru });
@@ -90,7 +88,7 @@ export const divisions: Division[] = [
       "Ткани, пряжа и нити для производителей на международных рынках — с печатью, крашеные или суровые, с надёжными поставками по всему миру.",
     ),
     cover: "/images/p/export-warehouse.webp",
-    gallery: ["/images/p/export-warehouse.webp", "/images/p/twill-weave-fabric-1.webp", "/images/p/cotton-yarn-1.webp", "/images/p/export-fabric-rolls.webp"],
+    gallery: ["/images/p/export-warehouse.webp", "/images/p/twill-weave-fabric-3.webp", "/images/p/cotton-yarn-1.webp", "/images/p/export-fabric-rolls.webp"],
   },
 ];
 
@@ -173,12 +171,14 @@ export const categories: Category[] = [
   cat("hieroglyphs", "home", t("Hieroglyphs Design", "Design Hiéroglyphes", "Hiyeroglif Tasarım", "تصميم الهيروغليفية", "Дизайн «Иероглифы»"), t("Ancient symbols, softly reimagined", "Symboles anciens, réinventés en douceur", "Kadim semboller, yumuşak bir yorumla", "رموز قديمة بلمسة عصرية ناعمة", "Древние символы в мягком прочтении"), [s.cotton, s.satin, s.colours], homeBedSizes, [o.satin, o.ranforce], "pharaoh-sand-1"),
   cat("marine", "home", t("Marine Design", "Design Marin", "Denizci Tasarım", "التصميم البحري", "Морской дизайн"), t("Anchors, sails and the calm of the sea", "Ancres, voiles et le calme de la mer", "Çapalar, yelkenler ve denizin huzuru", "مراسٍ وأشرعة وهدوء البحر", "Якоря, паруса и спокойствие моря"), [s.cotton, s.satin, s.colours], homeBedSizes, [o.satin, o.ranforce], "sailboat-2"),
   cat("luxury", "home", t("Luxury Design", "Design Luxe", "Lüks Tasarım", "التصميم الفاخر", "Люкс-дизайн"), t("Deep tones and rich textures for modern bedrooms", "Tons profonds et textures riches pour chambres modernes", "Modern yatak odaları için derin tonlar ve zengin dokular", "درجات عميقة وملامس غنية لغرف نوم عصرية", "Глубокие оттенки и фактуры для современных спален"), [s.cotton, s.satin, s.colours], homeBedSizes, [o.satin, o.ranforce], "gold-stripe-noir-1"),
+  cat("cushions-throws", "home", t("Cushions & Throws", "Coussins & Plaids", "Kırlent & Battaniye", "الوسائد والبطانيات", "Подушки и пледы"), t("Decorative cushions and cosy throws to finish every room", "Coussins décoratifs et plaids douillets pour sublimer chaque pièce", "Her odayı tamamlayan dekoratif kırlentler ve sıcak battaniyeler", "وسائد زخرفية وبطانيات دافئة تُكمل كل غرفة", "Декоративные подушки и уютные пледы для любой комнаты"), [s.cotton, s.colours, s.design], [t("45 × 45 cm", "45 × 45 cm", "45 × 45 cm", "45 × 45 سم", "45 × 45 см"), t("50 × 50 cm", "50 × 50 cm", "50 × 50 cm", "50 × 50 سم", "50 × 50 см"), t("Throw 130 × 170 cm", "Plaid 130 × 170 cm", "Battaniye 130 × 170 cm", "بطانية 130 × 170 سم", "Плед 130 × 170 см"), standard[1]], [o.print, o.jacq, o.emb, o.plain], "pharaoh-cushions-1"),
   cat("mattress", "home", t("Bed & Mattress", "Lit & Matelas", "Yatak & Baza", "السرير والمرتبة", "Кровать и матрас"), t("The foundation of a restful night", "La base d'une nuit réparatrice", "Huzurlu bir gecenin temeli", "أساس ليلة هانئة", "Основа спокойного сна"), [s.colours, s.design], [t("90 × 190 cm", "90 × 190 cm", "90 × 190 cm", "90 × 190 سم", "90 × 190 см"), t("160 × 200 cm", "160 × 200 cm", "160 × 200 cm", "160 × 200 سم", "160 × 200 см"), t("180 × 200 cm", "180 × 200 cm", "180 × 200 cm", "180 × 200 سم", "180 × 200 см"), standard[1]], [o.plain, o.woven], "classic-mattress-1"),
   cat("baby", "home", t("Baby & Kids", "Bébé & Enfant", "Bebek & Çocuk", "الرضّع والأطفال", "Малыши и дети"), t("Soft, playful prints for the little ones", "Imprimés doux et ludiques pour les petits", "Minikler için yumuşak, eğlenceli desenler", "نقوش ناعمة ومرحة للصغار", "Мягкие весёлые принты для малышей"), [s.cotton, s.colours, s.design], babySizes, [o.print, o.emb, o.plain], "baby-sleepsuit-1"),
   // Promotion
-  { ...cat("christmas", "promotion", t("Christmas Products", "Produits de Noël", "Yılbaşı Ürünleri", "منتجات عيد الميلاد", "Новогодние товары"), t("Festive gifts and textiles, branded for the season", "Cadeaux et textiles festifs, à vos couleurs pour les fêtes", "Markanıza özel yılbaşı hediyeleri ve tekstilleri", "هدايا ومنسوجات احتفالية تحمل علامتك في موسم الأعياد", "Праздничные подарки и текстиль с вашим брендом"), promoSpecs, standard, [o.print, o.emb, o.woven], "christmas-jumper-1"), seasonal: true },
+  cat("christmas", "promotion", t("Christmas Products", "Produits de Noël", "Yılbaşı Ürünleri", "منتجات عيد الميلاد", "Новогодние товары"), t("Festive gifts and textiles, branded for the season", "Cadeaux et textiles festifs, à vos couleurs pour les fêtes", "Markanıza özel yılbaşı hediyeleri ve tekstilleri", "هدايا ومنسوجات احتفالية تحمل علامتك في موسم الأعياد", "Праздничные подарки и текстиль с вашим брендом"), promoSpecs, standard, [o.print, o.emb, o.woven], "christmas-jumper-1"),
   cat("accessories", "promotion", t("Wristbands, Lanyards & Keychains", "Bracelets, tours de cou et porte-clés", "Bileklik, Boyun Askısı & Anahtarlık", "أساور وحبال تعليق وميداليات", "Браслеты, ланъярды и брелоки"), t("Small items, big brand visibility", "Petits objets, grande visibilité", "Küçük ürünler, büyük marka görünürlüğü", "قطع صغيرة وحضور كبير لعلامتك", "Мелочи с большим эффектом"), promoSpecs, standard, [o.print, o.woven, o.sublim], "remove-before-flight-keychain-3"),
   cat("headwear", "promotion", t("Caps, Hats & Beanies", "Casquettes, chapeaux et bonnets", "Şapka & Bere", "القبعات والطواقي", "Кепки, панамы и шапки"), t("Embroidered caps, printed hats and knitted sets", "Casquettes brodées, chapeaux imprimés et sets tricotés", "Nakışlı şapkalar, baskılı şapkalar ve örgü setler", "قبعات مطرّزة ومطبوعة وأطقم صوفية", "Вышитые кепки, панамы и вязаные наборы"), promoSpecs, standard, [o.emb, o.print, o.woven], "printed-bucket-hat-1"),
+  cat("bandanas", "promotion", t("Bandanas & Neck Gaiters", "Bandanas et tours de cou", "Bandana & Boyunluk", "الباندانا وأغطية الرقبة", "Банданы и гейтеры"), t("Printed bandanas and multi-way neck gaiters", "Bandanas imprimés et tours de cou multifonctions", "Baskılı bandanalar ve çok amaçlı boyunluklar", "باندانا مطبوعة وأغطية رقبة متعددة الاستخدامات", "Банданы с печатью и многофункциональные гейтеры"), promoSpecs, standard, [o.print, o.sublim, o.emb], "paisley-bandana-1"),
   cat("apparel", "promotion", t("Sweatshirts, Hoodies & T-Shirts", "Sweats, hoodies et t-shirts", "Sweatshirt, Kapüşonlu & Tişört", "سويت شيرت وهودي وتيشيرت", "Свитшоты, худи и футболки"), t("Comfortable apparel that wears your logo", "Des vêtements confortables qui portent votre logo", "Logonuzu taşıyan rahat giyim", "ملابس مريحة تحمل شعارك", "Удобная одежда с вашим логотипом"), promoSpecs, apparelSizes, [o.print, o.emb, o.sublim], "colorblock-sherpa-hoodie-3"),
   cat("sportswear", "promotion", t("Sportswear & Team Kits", "Sportswear et tenues d'équipe", "Spor Giyim & Takım Formaları", "ملابس رياضية وأطقم الفرق", "Спортивная форма"), t("Jerseys, bibs and kits for every team", "Maillots, chasubles et tenues pour chaque équipe", "Her takım için forma, yelek ve setler", "قمصان وصدريات وأطقم لكل فريق", "Форма и манишки для любой команды"), promoSpecs, apparelSizes, [o.sublim, o.print, o.emb], "training-bibs-4"),
   cat("socks", "promotion", t("Socks", "Chaussettes", "Çoraplar", "الجوارب", "Носки"), t("Sport, sublimation, embroidered and baby socks", "Chaussettes de sport, sublimation, brodées et bébé", "Spor, süblimasyon, nakışlı ve bebek çorapları", "جوارب رياضية ومطبوعة ومطرّزة وللأطفال", "Спортивные, сублимационные, вышитые и детские"), promoSpecs, [same("35–38"), same("39–42"), same("43–46"), standard[1]], [o.sublim, o.emb, o.woven], "sublimation-socks-1"),
@@ -194,6 +194,9 @@ export const categories: Category[] = [
   cat("yarns", "export", t("Yarns & Filaments", "Fils et filaments", "İplik & Filamentler", "الخيوط والفتائل", "Пряжа и нити"), t("100% cotton · 100% polyester · Blends · Filament", "100 % coton · 100 % polyester · Mélanges · Filament", "%100 pamuk · %100 polyester · Karışımlar · Filament", "قطن 100% · بوليستر 100% · خلطات · فتائل", "100% хлопок · 100% полиэстер · Смеси · Филамент"), [{ label: t("Colour", "Couleur", "Renk", "اللون", "Цвет"), value: t("Dyed · Pre-dyed", "Teint · Prêt à teindre", "Boyalı · Boya öncesi", "مصبوغ · قبل الصباغة", "Крашеные · Некрашеные") }, { label: t("Specification", "Spécification", "Spesifikasyon", "المواصفات", "Спецификация"), value: t("Count & twist to order", "Titre et torsion sur commande", "Numara ve büküm siparişe göre", "النمرة والبرم حسب الطلب", "Номер и крутка под заказ") }, { label: t("Supply", "Livraison", "Tedarik", "التوريد", "Поставка"), value: t("Export worldwide", "Export dans le monde entier", "Dünya çapında ihracat", "تصدير إلى جميع أنحاء العالم", "Экспорт по всему миру") }], [t("To your specification", "Selon vos spécifications", "Spesifikasyonunuza göre", "حسب مواصفاتك", "По вашей спецификации")], [t("Dyed", "Teint", "Boyalı", "مصبوغ", "Крашеная"), t("Pre-dyed", "Prêt à teindre", "Boya öncesi", "قبل الصباغة", "Некрашеная")], "export-yarn-wall", "kg"),
 ];
 
+// Seasonal category shown highlighted on the Promotion page and in the menu.
+export const featuredCategory = "christmas";
+
 export const getDivision = (slug: string) => divisions.find((d) => d.slug === slug);
 export const getCategory = (slug: string) => categories.find((c) => c.slug === slug);
 export const categoriesIn = (division: string) => categories.filter((c) => c.division === division);
@@ -205,7 +208,7 @@ export const company = {
   email: "info@hieron.com.tr",
   website: "www.hieron.com.tr",
   phone: "+90 506 178 3932",
-  whatsapp: "905061783932",
+  whatsapp: "905404205532",
   instagram: "https://www.instagram.com/hierontextilepromotion?cplk=MWRqeDl0NzViZ2E3cQ==",
   linkedin: "https://www.linkedin.com/company/hieron-textile-promotion/",
   location: t("Pamukkale – Denizli, Türkiye", "Pamukkale – Denizli, Turquie", "Pamukkale – Denizli, Türkiye", "باموكالي – دنيزلي، تركيا", "Памуккале – Денизли, Турция"),
