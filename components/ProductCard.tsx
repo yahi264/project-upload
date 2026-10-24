@@ -10,7 +10,7 @@ export function ProductCard({ product, locale, priority = false }: { product: Pr
   const label = name(product, locale);
   return (
     <Link href={`/${locale}/products/${product.slug}`} className="group block">
-      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+      <div className="relative aspect-[4/3] overflow-hidden bg-paper-2">
         <Img
           img={first}
           alt={label}
@@ -33,13 +33,13 @@ export function ProductCard({ product, locale, priority = false }: { product: Pr
             <Images className="h-3.5 w-3.5" strokeWidth={1.5} /> {product.images.length}
           </span>
         )}
-        <span className="absolute end-4 top-4 flex h-10 w-10 translate-y-2 items-center justify-center bg-cream text-navy opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <span className="absolute end-4 top-4 flex h-10 w-10 translate-y-2 items-center justify-center bg-paper text-fg opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
           <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" strokeWidth={1.5} />
         </span>
       </div>
       <div className="mt-4 flex items-baseline justify-between gap-4">
-        <h3 className="font-display text-xl leading-snug text-navy">{label}</h3>
-        {category && <span className="eyebrow shrink-0 text-end text-steel">{tr(category.name, locale).split(/[,&]/)[0].trim()}</span>}
+        <h3 className="font-display text-xl leading-snug text-fg">{label}</h3>
+        {category && <span className="eyebrow shrink-0 text-end text-fg-muted">{tr(category.name, locale).split(/[,&]/)[0].trim()}</span>}
       </div>
     </Link>
   );

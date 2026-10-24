@@ -1,0 +1,39 @@
+# Hieron website on cPanel (Apache / LiteSpeed)
+
+Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+# Always use the secure https:// address and the domain without "www"
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://hieron.com.tr%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.hieron\.com\.tr$ [NC]
+RewriteRule ^ https://hieron.com.tr%{REQUEST_URI} [L,R=301]
+
+# Correct file types
+AddType image/webp .webp
+AddType image/avif .avif
+AddType text/plain .txt
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Caching: pages are re-checked; code files (renamed on every build) kept a year; photos 30 days
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|avif|png|jpg|jpeg|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>

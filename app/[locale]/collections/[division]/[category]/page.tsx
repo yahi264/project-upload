@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: Props) {
       </PageHero>
 
       <section className="container-x py-20">
-        <p className="text-sm text-steel">
+        <p className="text-sm text-fg-muted">
           {list.length} {list.length === 1 ? t("product1") : t("products")}
         </p>
         <div className="mt-6 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -72,7 +72,7 @@ export default async function CategoryPage({ params }: Props) {
 
       <MadeToOrderBand locale={l} />
 
-      <section className="bg-sand/50 py-20">
+      <section className="bg-paper-2/50 py-20">
         <div className="container-x">
           <div className="flex items-end justify-between gap-6">
             <p className="eyebrow text-gold">{t("continueExploring")}</p>

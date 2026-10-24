@@ -249,6 +249,11 @@ const dict = {
   notFound: { en: "This page could not be found", fr: "Page introuvable", tr: "Sayfa bulunamadı", ar: "تعذّر العثور على هذه الصفحة", ru: "Страница не найдена" },
   backToCollection: { en: "Back to the collection", fr: "Retour à la collection", tr: "Koleksiyona dön", ar: "العودة إلى المجموعة", ru: "Вернуться к коллекции" },
   staticReady: { en: "Your request is ready — send it to us", fr: "Votre demande est prête — envoyez-la-nous", tr: "Talebiniz hazır — bize gönderin", ar: "طلبك جاهز — أرسله إلينا", ru: "Ваш запрос готов — отправьте его нам" },
+  stepBy: { en: "Step", fr: "Pas", tr: "Artış", ar: "مقدار الزيادة", ru: "Шаг" },
+  minQty: { en: "Minimum order: {n} pieces", fr: "Commande minimum : {n} pièces", tr: "Minimum sipariş: {n} adet", ar: "الحد الأدنى للطلب: {n} قطع", ru: "Минимальный заказ: {n} шт." },
+  darkMode: { en: "Dark mode", fr: "Mode sombre", tr: "Koyu mod", ar: "الوضع الداكن", ru: "Тёмная тема" },
+  lightMode: { en: "Light mode", fr: "Mode clair", tr: "Açık mod", ar: "الوضع الفاتح", ru: "Светлая тема" },
+  backToTop: { en: "Back to top", fr: "Haut de page", tr: "Başa dön", ar: "العودة إلى الأعلى", ru: "Наверх" },
   whatsapp: { en: "Chat on WhatsApp", fr: "Discuter sur WhatsApp", tr: "WhatsApp'tan yazın", ar: "تحدّث عبر واتساب", ru: "Написать в WhatsApp" },
 } satisfies Record<string, T>;
 

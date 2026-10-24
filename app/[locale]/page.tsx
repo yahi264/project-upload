@@ -86,13 +86,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <MadeToOrder locale={l} />
 
       {/* Introduction */}
-      <section className="bg-sand/50">
+      <section className="bg-paper-2/50">
         <div className="container-x grid items-center gap-16 py-24 lg:grid-cols-2 lg:py-32">
           <Reveal>
             <p className="eyebrow text-gold">{t("introEyebrow")}</p>
             <h2 className="mt-6 font-display text-4xl font-light leading-tight sm:text-5xl">{t("introTitle")}</h2>
-            <p className="mt-8 leading-relaxed text-steel">{t("introText")}</p>
-            <Link href={`${base}/about`} className="group eyebrow mt-10 inline-flex items-center gap-3 text-navy">
+            <p className="mt-8 leading-relaxed text-fg-muted">{t("introText")}</p>
+            <Link href={`${base}/about`} className="group eyebrow mt-10 inline-flex items-center gap-3 text-fg">
               {t("ourStory")}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" strokeWidth={1.5} />
             </Link>

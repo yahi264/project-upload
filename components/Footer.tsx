@@ -16,7 +16,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="mt-8 max-w-xs text-sm leading-relaxed text-silver/70">{t("footerText")}</p>
           <div className="mt-8 flex items-center gap-3">
             {certificates.map((c) => (
-              <span key={c.name} className="flex h-12 w-12 items-center justify-center rounded bg-white p-1.5" title={c.name}>
+              <span key={c.name} className="flex h-12 w-12 items-center justify-center rounded bg-card p-1.5" title={c.name}>
                 <Image src={c.logo} alt={c.name} width={40} height={40} className="h-full w-full object-contain" />
               </span>
             ))}

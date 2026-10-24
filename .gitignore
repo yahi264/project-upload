@@ -12,3 +12,4 @@ data/
 out/
 .next-pages/
 .pages-stash/
+dist/

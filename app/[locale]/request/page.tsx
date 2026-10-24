@@ -35,15 +35,15 @@ export default async function RequestPage({ params }: Props) {
       <section className="container-x py-20">
         <RequestForm locale={l} catalog={catalog} />
       </section>
-      <section className="border-t border-navy/10">
-        <div className="container-x flex flex-col gap-6 py-12 text-sm text-steel sm:flex-row sm:flex-wrap sm:gap-12">
+      <section className="border-t border-fg/10">
+        <div className="container-x flex flex-col gap-6 py-12 text-sm text-fg-muted sm:flex-row sm:flex-wrap sm:gap-12">
           <p className="flex items-center gap-3">
             <Mail className="h-4 w-4 text-gold" strokeWidth={1.5} />
-            {t("preferEmail")} <a href={`mailto:${company.email}`} className="text-navy underline-offset-4 hover:underline">{company.email}</a>
+            {t("preferEmail")} <a href={`mailto:${company.email}`} className="text-fg underline-offset-4 hover:underline">{company.email}</a>
           </p>
           <p className="flex items-center gap-3">
             <Phone className="h-4 w-4 text-gold" strokeWidth={1.5} />
-            <a href={`tel:${company.phone.replace(/\s/g, "")}`} dir="ltr" className="text-navy">{company.phone}</a>
+            <a href={`tel:${company.phone.replace(/\s/g, "")}`} dir="ltr" className="text-fg">{company.phone}</a>
           </p>
           <p className="flex items-center gap-3">
             <MapPin className="h-4 w-4 text-gold" strokeWidth={1.5} />

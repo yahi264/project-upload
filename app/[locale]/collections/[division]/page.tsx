@@ -54,7 +54,7 @@ export default async function DivisionPage({ params }: Props) {
         <div className={`grid gap-4 ${cats.length <= 2 ? "md:grid-cols-2" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}`}>
           {cats.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 4) * 0.06}>
-              <Link href={`/${l}/collections/${d.slug}/${c.slug}`} className={`group relative block overflow-hidden ${cats.length <= 2 ? "aspect-[16/9]" : "aspect-[4/5]"} ${c.slug === featuredCategory ? "ring-2 ring-gold ring-offset-4 ring-offset-cream" : ""}`}>
+              <Link href={`/${l}/collections/${d.slug}/${c.slug}`} className={`group relative block overflow-hidden ${cats.length <= 2 ? "aspect-[16/9]" : "aspect-[4/5]"} ${c.slug === featuredCategory ? "ring-2 ring-gold ring-offset-4 ring-offset-paper" : ""}`}>
                 <Image
                   src={c.cover}
                   alt={tr(c.name, l)}

@@ -47,7 +47,7 @@ export default async function AboutPage({ params }: Props) {
           <p className="eyebrow text-gold">Pamukkale · Denizli</p>
           <h2 className="mt-6 font-display text-4xl font-light leading-tight">{t("aboutH")}</h2>
         </Reveal>
-        <Reveal delay={0.1} className="space-y-6 leading-relaxed text-steel">
+        <Reveal delay={0.1} className="space-y-6 leading-relaxed text-fg-muted">
           <p>{t("aboutP1")}</p>
           <p>{t("aboutP2")}</p>
           <p>{t("aboutP3")}</p>
@@ -69,12 +69,12 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       <section className="container-x py-24 lg:py-32">
-        <div className="grid gap-px bg-navy/10 md:grid-cols-3">
+        <div className="grid gap-px bg-fg/10 md:grid-cols-3">
           {([["pillar1", "pillar1t"], ["pillar2", "pillar2t"], ["pillar3", "pillar3t"]] as const).map(([h, p], i) => (
-            <Reveal key={h} delay={i * 0.1} className="h-full bg-cream p-10">
+            <Reveal key={h} delay={i * 0.1} className="h-full bg-paper p-10">
               <p className="font-display text-5xl text-gold/70">0{i + 1}</p>
               <h3 className="mt-6 font-display text-2xl">{t(h)}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-steel">{t(p)}</p>
+              <p className="mt-4 text-sm leading-relaxed text-fg-muted">{t(p)}</p>
             </Reveal>
           ))}
         </div>

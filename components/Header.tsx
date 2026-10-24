@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { ClipboardList, Menu, Snowflake, X } from "lucide-react";
 import { useRequestList } from "./RequestList";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { categoriesIn, divisions, featuredCategory } from "@/lib/structure";
 import { getT, tr, type Locale } from "@/lib/i18n";
 
@@ -67,21 +68,21 @@ export function Header({ locale }: { locale: Locale }) {
                   className="absolute inset-x-0 top-full pt-0"
                 >
                   <div className="container-x">
-                    <div className="grid grid-cols-4 gap-px bg-navy/10 shadow-2xl shadow-ink/30">
+                    <div className="grid grid-cols-4 gap-px bg-fg/10 shadow-2xl shadow-ink/30">
                       {divisions.map((d) => (
-                        <div key={d.slug} className="bg-cream p-6">
+                        <div key={d.slug} className="bg-paper p-6">
                           <Link href={`${base}/collections/${d.slug}`} className="group block">
                             <span className="relative block aspect-[16/7] overflow-hidden">
                               <Image src={d.cover} alt="" fill sizes="400px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </span>
-                            <span className="mt-4 block font-display text-xl text-navy">{tr(d.name, locale)}</span>
+                            <span className="mt-4 block font-display text-xl text-fg">{tr(d.name, locale)}</span>
                           </Link>
                           <ul className="mt-3 space-y-1.5">
                             {categoriesIn(d.slug).map((c) => (
                               <li key={c.slug}>
                                 <Link
                                   href={`${base}/collections/${d.slug}/${c.slug}`}
-                                  className={`text-sm transition-colors ${c.slug === featuredCategory ? "inline-flex items-center gap-1.5 font-medium text-gold hover:text-navy" : "text-steel hover:text-navy"}`}
+                                  className={`text-sm transition-colors ${c.slug === featuredCategory ? "inline-flex items-center gap-1.5 font-medium text-gold hover:text-fg" : "text-fg-muted hover:text-fg"}`}
                                 >
                                   {c.slug === featuredCategory && <Snowflake className="h-3.5 w-3.5" strokeWidth={1.6} />}
                                   {tr(c.name, locale)}
@@ -104,6 +105,7 @@ export function Header({ locale }: { locale: Locale }) {
             {t("navAbout")}
           </Link>
           <LanguageSwitcher locale={locale} />
+          <ThemeToggle locale={locale} />
           <Link href={`${base}/request`} className="btn-outline-light relative !px-5 !py-2.5">
             <ClipboardList className="h-4 w-4" strokeWidth={1.5} />
             {t("navQuote")}
@@ -162,8 +164,9 @@ export function Header({ locale }: { locale: Locale }) {
                   {t("navQuote")} {count > 0 && <span className="text-gold">({count})</span>}
                 </Link>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 flex items-start justify-between gap-4">
                 <LanguageSwitcher locale={locale} compact />
+                <ThemeToggle locale={locale} />
               </div>
             </div>
           </motion.nav>

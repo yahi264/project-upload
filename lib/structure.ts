@@ -221,9 +221,9 @@ export const certificates = [
   { key: "certGrs", name: "GRS", logo: "/images/certs/grs.png" },
 ] as const;
 
-// Quantity label, short unit, starting amount and +/- step for each unit
+// Quantity label, short unit, starting/minimum amount and the +/- steps the client can choose
 export const unitInfo = {
-  pcs: { qty: "qty", short: "unitPcs", start: 100, step: 50 },
-  m: { qty: "qtyM", short: "unitM", start: 1000, step: 500 },
-  kg: { qty: "qtyKg", short: "unitKg", start: 500, step: 100 },
+  pcs: { qty: "qty", short: "unitPcs", start: 5, min: 5, steps: [1, 5, 10] },
+  m: { qty: "qtyM", short: "unitM", start: 1000, min: 1, steps: [500] },
+  kg: { qty: "qtyKg", short: "unitKg", start: 500, min: 1, steps: [100] },
 } as const;

@@ -51,7 +51,10 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
         unit: c.unit,
       };
     });
-    if (process.env.NEXT_PUBLIC_STATIC === "1") {
+    // Hosted on Cenuta: a PHP script on the same site emails the request (NEXT_PUBLIC_REQUEST_ENDPOINT).
+    // GitHub Pages copy (NEXT_PUBLIC_STATIC=1, no endpoint): the client sends it by WhatsApp or email instead.
+    const endpoint = process.env.NEXT_PUBLIC_REQUEST_ENDPOINT;
+    if (!endpoint && process.env.NEXT_PUBLIC_STATIC === "1") {
       const v = values;
       setStaticMsg(
         [
@@ -73,7 +76,7 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    const res = await fetch("/api/request", {
+    const res = await fetch(endpoint || "/api/request", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...values, locale, items: lines }),
@@ -91,7 +94,7 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mx-auto max-w-xl py-16 text-center">
         <CheckCircle2 className="mx-auto h-14 w-14 text-gold" strokeWidth={1} />
         <h2 className="mt-8 font-display text-4xl font-light">{t("staticReady")}</h2>
-        <pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap bg-white p-5 text-start text-xs leading-relaxed text-steel" dir="ltr">{staticMsg}</pre>
+        <pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap bg-card p-5 text-start text-xs leading-relaxed text-fg-muted" dir="ltr">{staticMsg}</pre>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a href={`https://wa.me/${company.whatsapp}?text=${text}`} target="_blank" rel="noopener noreferrer" onClick={clear} className="btn-dark">{t("whatsapp")}</a>
           <a href={`mailto:${company.email}?subject=${encodeURIComponent("Quote request")}&body=${text}`} onClick={clear} className="btn-outline-dark">{company.email}</a>
@@ -105,7 +108,7 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mx-auto max-w-xl py-16 text-center">
         <CheckCircle2 className="mx-auto h-14 w-14 text-gold" strokeWidth={1} />
         <h2 className="mt-8 font-display text-4xl font-light">{t("thanksTitle")}</h2>
-        <p className="mt-4 text-steel">{t("thanksText", { id: sentId })}</p>
+        <p className="mt-4 text-fg-muted">{t("thanksText", { id: sentId })}</p>
         <Link href={`/${locale}/collections`} className="btn-dark mt-10">{t("continueBrowsing")}</Link>
       </motion.div>
     );
@@ -119,16 +122,16 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
         <div className="lg:sticky lg:top-28">
           <div className="flex items-baseline justify-between">
             <h2 className="font-display text-3xl">{t("yourSelection")}</h2>
-            <span className="text-sm text-steel">{known.length} {t("items")}</span>
+            <span className="text-sm text-fg-muted">{known.length} {t("items")}</span>
           </div>
 
           {known.length === 0 ? (
-            <div className="mt-6 border border-dashed border-navy/20 p-8 text-center">
-              <p className="text-sm text-steel">{t("emptyList")}</p>
+            <div className="mt-6 border border-dashed border-fg/20 p-8 text-center">
+              <p className="text-sm text-fg-muted">{t("emptyList")}</p>
               <Link href={`/${locale}/collections`} className="btn-outline-dark mt-5">{t("browse")}</Link>
             </div>
           ) : (
-            <ul className="mt-6 divide-y divide-navy/10 border-y border-navy/10">
+            <ul className="mt-6 divide-y divide-fg/10 border-y border-fg/10">
               <AnimatePresence initial={false}>
                 {known.map((item) => {
                   const p = catalog[item.slug];
@@ -144,32 +147,32 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
                         <div className="flex items-start justify-between gap-2">
                           <div>
                             <p className="font-display text-lg leading-tight">{label}</p>
-                            <p className="mt-1 text-xs text-steel">
+                            <p className="mt-1 text-xs text-fg-muted">
                               {c.sizes.length > 1 && c.sizes[item.size] && `${tr(c.sizes[item.size], locale)} · `}
                               {c.options[item.option] && tr(c.options[item.option], locale)}
                             </p>
                           </div>
-                          <button onClick={() => remove(item.id)} aria-label={`${t("remove")} ${label}`} className="p-1 text-steel hover:text-navy">
+                          <button onClick={() => remove(item.id)} aria-label={`${t("remove")} ${label}`} className="p-1 text-fg-muted hover:text-fg">
                             <Trash2 className="h-4 w-4" strokeWidth={1.5} />
                           </button>
                         </div>
-                        <div className="mt-2 flex w-36 items-center border border-navy/15 text-sm" dir="ltr">
-                          <button type="button" aria-label={t("decrease")} onClick={() => update(item.id, { quantity: Math.max(1, item.quantity - unit.step) })} className="p-1.5 hover:bg-sand">
+                        <div className="mt-2 flex w-36 items-center border border-fg/15 text-sm" dir="ltr">
+                          <button type="button" aria-label={t("decrease")} onClick={() => update(item.id, { quantity: Math.max(unit.min, item.quantity - unit.steps[0]) })} className="p-1.5 hover:bg-paper-2">
                             <Minus className="h-3.5 w-3.5" />
                           </button>
                           <input
                             type="number"
                             min={1}
                             value={item.quantity}
-                            onChange={(e) => update(item.id, { quantity: Math.max(1, Number(e.target.value) || 1) })}
+                            onChange={(e) => update(item.id, { quantity: Math.max(unit.min, Number(e.target.value) || unit.min) })}
                             className="w-full bg-transparent text-center outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
                             aria-label={t(unit.qty)}
                           />
-                          <button type="button" aria-label={t("increase")} onClick={() => update(item.id, { quantity: item.quantity + unit.step })} className="p-1.5 hover:bg-sand">
+                          <button type="button" aria-label={t("increase")} onClick={() => update(item.id, { quantity: item.quantity + unit.steps[0] })} className="p-1.5 hover:bg-paper-2">
                             <Plus className="h-3.5 w-3.5" />
                           </button>
                         </div>
-                        <span className="mt-1 block text-[11px] text-steel">{t(unit.short)}</span>
+                        <span className="mt-1 block text-[11px] text-fg-muted">{t(unit.short)}</span>
                       </div>
                     </motion.li>
                   );
@@ -207,7 +210,7 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
             </Field>
           </div>
           <label className="flex cursor-pointer items-start gap-3 text-sm sm:col-span-2">
-            <input type="checkbox" {...register("branding")} className="mt-0.5 h-4 w-4 accent-navy" />
+            <input type="checkbox" {...register("branding")} className="mt-0.5 h-4 w-4 accent-gold" />
             <span>{t("fBranding")}</span>
           </label>
           {/* Honeypot field, hidden from people */}
@@ -220,7 +223,7 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
           {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
           {t("send")}
         </button>
-        <p className="mt-4 text-xs text-steel">{t("privacy")}</p>
+        <p className="mt-4 text-xs text-fg-muted">{t("privacy")}</p>
       </form>
     </div>
   );
@@ -229,7 +232,7 @@ export function RequestForm({ locale, catalog }: { locale: Locale; catalog: Prod
 function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="eyebrow text-steel">{label}</span>
+      <span className="eyebrow text-fg-muted">{label}</span>
       {children}
       {error && <span className="mt-1 block text-xs text-red-700">{error}</span>}
     </label>

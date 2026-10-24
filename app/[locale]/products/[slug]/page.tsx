@@ -46,14 +46,14 @@ export default async function ProductPage({ params }: Props) {
     <>
       <div className="h-[64px] bg-ink" />
       <section className="container-x py-10 lg:py-14">
-        <nav className="flex flex-wrap items-center gap-2 text-xs text-steel" aria-label="Breadcrumb">
-          <Link href={`/${l}/collections`} className="hover:text-navy">{t("navCollections")}</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-xs text-fg-muted" aria-label="Breadcrumb">
+          <Link href={`/${l}/collections`} className="hover:text-fg">{t("navCollections")}</Link>
           <ChevronRight className="h-3 w-3 rtl:-scale-x-100" />
-          <Link href={`/${l}/collections/${division.slug}`} className="hover:text-navy">{tr(division.name, l)}</Link>
+          <Link href={`/${l}/collections/${division.slug}`} className="hover:text-fg">{tr(division.name, l)}</Link>
           <ChevronRight className="h-3 w-3 rtl:-scale-x-100" />
-          <Link href={`/${l}/collections/${division.slug}/${category.slug}`} className="hover:text-navy">{tr(category.name, l)}</Link>
+          <Link href={`/${l}/collections/${division.slug}/${category.slug}`} className="hover:text-fg">{tr(category.name, l)}</Link>
           <ChevronRight className="h-3 w-3 rtl:-scale-x-100" />
-          <span className="text-navy">{label}</span>
+          <span className="text-fg">{label}</span>
         </nav>
 
         <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -66,12 +66,12 @@ export default async function ProductPage({ params }: Props) {
           <div className="lg:col-span-5">
             <p className="eyebrow text-gold">{tr(division.name, l)} · {tr(category.name, l)}</p>
             <h1 className="mt-4 font-display text-5xl font-light leading-tight">{label}</h1>
-            <p className="mt-5 leading-relaxed text-steel">{tr(product.description ?? category.tagline, l)}</p>
+            <p className="mt-5 leading-relaxed text-fg-muted">{tr(product.description ?? category.tagline, l)}</p>
 
-            <dl className="mt-8 divide-y divide-navy/10 border-y border-navy/10">
+            <dl className="mt-8 divide-y divide-fg/10 border-y border-fg/10">
               {category.specs.map((s) => (
                 <div key={s.label.en} className="grid grid-cols-[7.5rem_1fr] gap-4 py-3 text-sm">
-                  <dt className="text-steel">{tr(s.label, l)}</dt>
+                  <dt className="text-fg-muted">{tr(s.label, l)}</dt>
                   <dd>{tr(s.value, l)}</dd>
                 </div>
               ))}
@@ -89,7 +89,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {related.length > 0 && (
-        <section className="bg-sand/50 py-20">
+        <section className="bg-paper-2/50 py-20">
           <div className="container-x">
             <div className="flex items-end justify-between gap-6">
               <h2 className="font-display text-4xl font-light">{t("more")} {tr(category.name, l)}</h2>

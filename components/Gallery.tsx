@@ -48,7 +48,7 @@ export function Gallery({ images, alt, locale }: { images: Img[]; alt: string; l
             <Image src={img.src} alt={alt} fill priority={i === 0} quality={90} sizes="(min-width:1280px) 750px, (min-width:1024px) 58vw, 100vw" className="object-cover" />
           </motion.div>
         </AnimatePresence>
-        <span className="absolute end-4 top-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-navy opacity-0 transition-opacity group-hover:opacity-100">
+        <span className="absolute end-4 top-4 flex h-10 w-10 items-center justify-center bg-paper/90 text-fg opacity-0 transition-opacity group-hover:opacity-100">
           <Expand className="h-4 w-4" strokeWidth={1.5} />
         </span>
         {many && (
@@ -65,7 +65,7 @@ export function Gallery({ images, alt, locale }: { images: Img[]; alt: string; l
               key={im.src}
               onClick={() => setI(k)}
               aria-label={`${t("photo")} ${k + 1}`}
-              className={`relative aspect-[16/9] w-28 shrink-0 overflow-hidden transition-opacity ${k === i ? "ring-2 ring-navy ring-offset-2 ring-offset-cream" : "opacity-60 hover:opacity-100"}`}
+              className={`relative aspect-[16/9] w-28 shrink-0 overflow-hidden transition-opacity ${k === i ? "ring-2 ring-fg ring-offset-2 ring-offset-paper" : "opacity-60 hover:opacity-100"}`}
               style={{ backgroundColor: im.color }}
             >
               <Image src={im.src} alt="" fill sizes="112px" className="object-cover" />

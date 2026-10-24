@@ -45,7 +45,7 @@ export function CatalogBrowser({
 
   return (
     <div>
-      <div className="sticky top-[64px] z-30 -mx-5 border-b border-navy/10 bg-cream/95 px-5 py-4 backdrop-blur sm:-mx-8 sm:px-8">
+      <div className="sticky top-[64px] z-30 -mx-5 border-b border-fg/10 bg-paper/95 px-5 py-4 backdrop-blur sm:-mx-8 sm:px-8">
         {!division && (
           <div className="scrollbar-none -mx-1 mb-3 flex gap-1 overflow-x-auto">
             {[{ slug: "all", name: null }, ...divisions].map((d) => (
@@ -53,11 +53,11 @@ export function CatalogBrowser({
                 key={d.slug}
                 onClick={() => pickDivision(d.slug)}
                 className={`relative shrink-0 px-4 py-2 text-xs uppercase tracking-[0.2em] transition-colors ${
-                  activeDivision === d.slug ? "text-cream" : "text-steel hover:text-navy"
+                  activeDivision === d.slug ? "text-paper" : "text-fg-muted hover:text-fg"
                 }`}
               >
                 {activeDivision === d.slug && (
-                  <motion.span layoutId="div-tab" className="absolute inset-0 bg-navy" transition={{ type: "spring", bounce: 0.15, duration: 0.5 }} />
+                  <motion.span layoutId="div-tab" className="absolute inset-0 bg-fg" transition={{ type: "spring", bounce: 0.15, duration: 0.5 }} />
                 )}
                 <span className="relative">{d.name ? tr(d.name, locale) : t("all")}</span>
               </button>
@@ -74,15 +74,15 @@ export function CatalogBrowser({
                   setLimit(PAGE);
                 }}
                 className={`shrink-0 border px-3 py-1.5 text-xs transition-colors ${
-                  activeCategory === c.slug ? "border-navy bg-navy/5 text-navy" : "border-navy/15 text-steel hover:border-navy/40"
+                  activeCategory === c.slug ? "border-fg bg-fg/5 text-fg" : "border-fg/15 text-fg-muted hover:border-fg/40"
                 }`}
               >
                 {c.name ? tr(c.name, locale) : t("all")}
               </button>
             ))}
           </div>
-          <label className="flex shrink-0 items-center gap-3 border-b border-navy/20 py-1 lg:w-64">
-            <Search className="h-4 w-4 text-steel" strokeWidth={1.5} />
+          <label className="flex shrink-0 items-center gap-3 border-b border-fg/20 py-1 lg:w-64">
+            <Search className="h-4 w-4 text-fg-muted" strokeWidth={1.5} />
             <input
               value={query}
               onChange={(e) => {
@@ -90,13 +90,13 @@ export function CatalogBrowser({
                 setLimit(PAGE);
               }}
               placeholder={t("search")}
-              className="w-full bg-transparent py-1 text-sm outline-none placeholder:text-steel/60"
+              className="w-full bg-transparent py-1 text-sm outline-none placeholder:text-fg-muted/60"
             />
           </label>
         </div>
       </div>
 
-      <p className="mt-8 text-sm text-steel">
+      <p className="mt-8 text-sm text-fg-muted">
         {shown.length} {shown.length === 1 ? t("product1") : t("products")}
       </p>
 
@@ -125,7 +125,7 @@ export function CatalogBrowser({
         </div>
       )}
 
-      {shown.length === 0 && <p className="py-24 text-center font-display text-2xl text-steel">{t("noMatch")}</p>}
+      {shown.length === 0 && <p className="py-24 text-center font-display text-2xl text-fg-muted">{t("noMatch")}</p>}
     </div>
   );
 }

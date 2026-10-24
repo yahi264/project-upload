@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:pages": "node scripts/deploy-pages.mjs"
+    "deploy:pages": "node scripts/deploy-pages.mjs",
+    "build:cenuta": "node scripts/build-cenuta.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.2",
+    "lenis": "1.3.25",
     "lucide-react": "^1.59.0",
     "motion": "^14.3.0",
     "next": "^16.4.2",

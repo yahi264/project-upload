@@ -64,7 +64,7 @@ export function LanguageSwitcher({ locale, compact = false }: { locale: Locale; 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.15 }}
-            className="absolute end-0 top-full mt-3 w-48 bg-cream py-2 shadow-2xl shadow-ink/30"
+            className="absolute end-0 top-full mt-3 w-48 bg-paper py-2 shadow-2xl shadow-ink/30"
           >
             {locales.map((l) => (
               <li key={l}>
@@ -72,7 +72,7 @@ export function LanguageSwitcher({ locale, compact = false }: { locale: Locale; 
                   href={hrefFor(l)}
                   onClick={() => remember(l)}
                   lang={l}
-                  className="flex items-center gap-3 px-4 py-2.5 text-sm text-navy hover:bg-sand"
+                  className="flex items-center gap-3 px-4 py-2.5 text-sm text-fg hover:bg-paper-2"
                 >
                   <Flag locale={l} />
                   <span className="flex-1">{localeNames[l]}</span>

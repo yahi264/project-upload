@@ -6,6 +6,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SocialButtons } from "@/components/SocialButtons";
 import { IntroCurtain, ScrollProgress } from "@/components/LuxuryTouches";
+import { BackToTop, PageFade, SmoothScroll } from "@/components/LuxuryMotion";
+import { themeScript } from "@/components/ThemeToggle";
 import { RequestListProvider } from "@/components/RequestList";
 import { dirOf, getT, isLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -47,15 +49,23 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={l}
       dir={dirOf(l)}
       className={`${cormorant.variable} ${jost.variable} ${amiri.variable} ${tajawal.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
+        <SmoothScroll />
         <IntroCurtain />
         <ScrollProgress />
         <RequestListProvider>
           <Header locale={l} />
-          <main>{children}</main>
+          <main>
+            <PageFade>{children}</PageFade>
+          </main>
           <Footer locale={l} />
           <SocialButtons locale={l} />
+          <BackToTop label={getT(l)("backToTop")} />
         </RequestListProvider>
       </body>
     </html>

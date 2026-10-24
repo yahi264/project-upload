@@ -14,6 +14,13 @@
   --color-gold: #b0915f;
   --color-gold-light: #d5bf94;
 
+  /* Theme colours for light surfaces; they switch in dark mode (see html.dark below) */
+  --color-paper: #f6f3ee;
+  --color-paper-2: #ebe4d8;
+  --color-card: #ffffff;
+  --color-fg: #151f2a;
+  --color-fg-muted: #5d6976;
+
   --font-display: var(--font-cormorant), "Times New Roman", serif;
   --font-sans: var(--font-jost), system-ui, sans-serif;
 
@@ -29,7 +36,8 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-cream text-navy font-sans antialiased;
+    @apply bg-paper text-fg font-sans antialiased;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   ::selection {
     @apply bg-gold/30;
@@ -46,19 +54,19 @@
   @apply btn bg-cream text-navy hover:bg-white;
 }
 @utility btn-dark {
-  @apply btn bg-navy text-cream hover:bg-ink;
+  @apply btn bg-fg text-paper hover:opacity-90;
 }
 @utility btn-outline-light {
   @apply btn border border-silver/50 text-cream hover:border-cream hover:bg-cream/10;
 }
 @utility btn-outline-dark {
-  @apply btn border border-navy/30 text-navy hover:border-navy hover:bg-navy hover:text-cream;
+  @apply btn border border-fg/30 text-fg hover:border-fg hover:bg-fg hover:text-paper;
 }
 @utility container-x {
   @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
 }
 @utility field {
-  @apply w-full border-0 border-b border-navy/20 bg-transparent px-0 py-3 text-navy placeholder:text-steel/60 focus:border-navy focus:ring-0 focus:outline-none;
+  @apply w-full border-0 border-b border-fg/20 bg-transparent px-0 py-3 text-fg placeholder:text-fg-muted/60 focus:border-gold focus:ring-0 focus:outline-none;
 }
 @utility silver-text {
   background: linear-gradient(100deg, #8e959d 0%, #e9ecef 35%, #a9b0b8 55%, #f2f4f6 75%, #9aa1a9 100%);
@@ -93,4 +101,31 @@ body::after {
   opacity: 0.05;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Dark mode: deep midnight surfaces, warm ivory text, gold accents ── */
+html.dark {
+  color-scheme: dark;
+  --color-paper: #0b1118;
+  --color-paper-2: #121b25;
+  --color-card: #172230;
+  --color-fg: #ece6dc;
+  --color-fg-muted: #9ba5b0;
+}
+html.dark body::after {
+  mix-blend-mode: screen;
+  opacity: 0.035;
+}
+html.dark ::selection {
+  background: rgb(213 191 148 / 0.3);
+}
+/* Certificate logos are on white artwork: keep a light backing so they stay readable */
+html.dark .cert-logo {
+  background: #f6f3ee;
+  border-radius: 6px;
+  padding: 6px;
+}
+/* Smooth theme change */
+html.theme-switching *, html.theme-switching *::before, html.theme-switching *::after {
+  transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, fill 0.5s ease !important;
 }
