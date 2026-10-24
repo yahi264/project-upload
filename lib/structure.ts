@@ -207,7 +207,7 @@ export const company = {
   name: "Hieron Textile & Promotion",
   email: "info@hieron.com.tr",
   website: "www.hieron.com.tr",
-  phone: "+90 506 178 3932",
+  phone: "+90 540 420 55 32",
   whatsapp: "905404205532",
   instagram: "https://www.instagram.com/hierontextilepromotion?cplk=MWRqeDl0NzViZ2E3cQ==",
   linkedin: "https://www.linkedin.com/company/hieron-textile-promotion/",
