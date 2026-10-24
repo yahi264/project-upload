@@ -2342,11 +2342,11 @@
   "division": "promo",
   "category": "accessories",
   "name": {
-   "en": "Silicone Wristband",
-   "fr": "Bracelet en silicone",
-   "tr": "Silikon Bileklik",
-   "ar": "سوار سيليكون",
-   "ru": "Силиконовый браслет"
+   "en": "Knitted Wristband",
+   "fr": "Bracelet tricoté",
+   "tr": "Örme Bileklik",
+   "ar": "سوار محبوك",
+   "ru": "Вязаный браслет"
   },
   "images": [
    {
@@ -2368,11 +2368,11 @@
   "division": "promo",
   "category": "accessories",
   "name": {
-   "en": "Concert Wristband",
-   "fr": "Bracelet de concert",
-   "tr": "Konser Bilekliği",
-   "ar": "سوار الحفلات",
-   "ru": "Браслет для концерта"
+   "en": "Silicone Wristband",
+   "fr": "Bracelet en silicone",
+   "tr": "Silikon Bileklik",
+   "ar": "سوار سيليكون",
+   "ru": "Силиконовый браслет"
   },
   "images": [
    {
@@ -2428,7 +2428,7 @@
   "name": {
    "en": "Captain Armband",
    "fr": "Brassard de capitaine",
-   "tr": "Kaptan Pazubendi",
+   "tr": "Kaptan Bandı",
    "ar": "شارة القائد",
    "ru": "Капитанская повязка"
   },
@@ -3360,7 +3360,7 @@
  {
   "slug": "christmas-jumper",
   "division": "promo",
-  "category": "apparel",
+  "category": "christmas",
   "name": {
    "en": "Christmas Jumper",
    "fr": "Pull de Noël",
@@ -3738,7 +3738,7 @@
  {
   "slug": "christmas-socks",
   "division": "promo",
-  "category": "socks",
+  "category": "christmas",
   "name": {
    "en": "Christmas Socks",
    "fr": "Chaussettes de Noël",
@@ -3984,7 +3984,7 @@
  {
   "slug": "festive-runner-napkins",
   "division": "promo",
-  "category": "kitchen-bar",
+  "category": "christmas",
   "name": {
    "en": "Festive Runner & Napkins",
    "fr": "Chemin de table et serviettes de fête",
@@ -5178,7 +5178,7 @@
  {
   "slug": "christmas-stockings",
   "division": "promo",
-  "category": "gifts",
+  "category": "christmas",
   "name": {
    "en": "Christmas Stockings",
    "fr": "Chaussettes de Noël à suspendre",

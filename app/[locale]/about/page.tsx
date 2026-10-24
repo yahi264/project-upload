@@ -50,6 +50,7 @@ export default async function AboutPage({ params }: Props) {
         <Reveal delay={0.1} className="space-y-6 leading-relaxed text-steel">
           <p>{t("aboutP1")}</p>
           <p>{t("aboutP2")}</p>
+          <p>{t("aboutP3")}</p>
         </Reveal>
       </section>
 

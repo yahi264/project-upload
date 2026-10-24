@@ -28,6 +28,8 @@ export type Category = {
   options: T[];
   cover: string;
   unit: Unit;
+  // Highlighted as the current season on the Promotion page
+  seasonal?: boolean;
 };
 
 const t = (en: string, fr: string, tr: string, ar: string, ru: string): T => ({ en, fr, tr, ar, ru });
@@ -174,6 +176,7 @@ export const categories: Category[] = [
   cat("mattress", "home", t("Bed & Mattress", "Lit & Matelas", "Yatak & Baza", "السرير والمرتبة", "Кровать и матрас"), t("The foundation of a restful night", "La base d'une nuit réparatrice", "Huzurlu bir gecenin temeli", "أساس ليلة هانئة", "Основа спокойного сна"), [s.colours, s.design], [t("90 × 190 cm", "90 × 190 cm", "90 × 190 cm", "90 × 190 سم", "90 × 190 см"), t("160 × 200 cm", "160 × 200 cm", "160 × 200 cm", "160 × 200 سم", "160 × 200 см"), t("180 × 200 cm", "180 × 200 cm", "180 × 200 cm", "180 × 200 سم", "180 × 200 см"), standard[1]], [o.plain, o.woven], "classic-mattress-1"),
   cat("baby", "home", t("Baby & Kids", "Bébé & Enfant", "Bebek & Çocuk", "الرضّع والأطفال", "Малыши и дети"), t("Soft, playful prints for the little ones", "Imprimés doux et ludiques pour les petits", "Minikler için yumuşak, eğlenceli desenler", "نقوش ناعمة ومرحة للصغار", "Мягкие весёлые принты для малышей"), [s.cotton, s.colours, s.design], babySizes, [o.print, o.emb, o.plain], "baby-sleepsuit-1"),
   // Promotion
+  { ...cat("christmas", "promotion", t("Christmas Products", "Produits de Noël", "Yılbaşı Ürünleri", "منتجات عيد الميلاد", "Новогодние товары"), t("Festive gifts and textiles, branded for the season", "Cadeaux et textiles festifs, à vos couleurs pour les fêtes", "Markanıza özel yılbaşı hediyeleri ve tekstilleri", "هدايا ومنسوجات احتفالية تحمل علامتك في موسم الأعياد", "Праздничные подарки и текстиль с вашим брендом"), promoSpecs, standard, [o.print, o.emb, o.woven], "christmas-jumper-1"), seasonal: true },
   cat("accessories", "promotion", t("Wristbands, Lanyards & Keychains", "Bracelets, tours de cou et porte-clés", "Bileklik, Boyun Askısı & Anahtarlık", "أساور وحبال تعليق وميداليات", "Браслеты, ланъярды и брелоки"), t("Small items, big brand visibility", "Petits objets, grande visibilité", "Küçük ürünler, büyük marka görünürlüğü", "قطع صغيرة وحضور كبير لعلامتك", "Мелочи с большим эффектом"), promoSpecs, standard, [o.print, o.woven, o.sublim], "remove-before-flight-keychain-3"),
   cat("headwear", "promotion", t("Caps, Hats & Beanies", "Casquettes, chapeaux et bonnets", "Şapka & Bere", "القبعات والطواقي", "Кепки, панамы и шапки"), t("Embroidered caps, printed hats and knitted sets", "Casquettes brodées, chapeaux imprimés et sets tricotés", "Nakışlı şapkalar, baskılı şapkalar ve örgü setler", "قبعات مطرّزة ومطبوعة وأطقم صوفية", "Вышитые кепки, панамы и вязаные наборы"), promoSpecs, standard, [o.emb, o.print, o.woven], "printed-bucket-hat-1"),
   cat("apparel", "promotion", t("Sweatshirts, Hoodies & T-Shirts", "Sweats, hoodies et t-shirts", "Sweatshirt, Kapüşonlu & Tişört", "سويت شيرت وهودي وتيشيرت", "Свитшоты, худи и футболки"), t("Comfortable apparel that wears your logo", "Des vêtements confortables qui portent votre logo", "Logonuzu taşıyan rahat giyim", "ملابس مريحة تحمل شعارك", "Удобная одежда с вашим логотипом"), promoSpecs, apparelSizes, [o.print, o.emb, o.sublim], "colorblock-sherpa-hoodie-3"),
